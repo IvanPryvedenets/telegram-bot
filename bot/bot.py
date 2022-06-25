@@ -1,7 +1,7 @@
 import logging
 
-from dbreader import *
-from dbwriter import writer
+from bot.dbreader import *
+from bot.dbwriter import writer
 
 from aiogram import Bot, types
 from aiogram.contrib.middlewares.logging import LoggingMiddleware
