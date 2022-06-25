@@ -74,9 +74,6 @@ async def message_dispatcher(message: types.Message, state: FSMContext):
 @dp.callback_query_handler()
 async def process_callback_button1(callback_query: types.CallbackQuery, state: FSMContext):
 
-    id = callback_query.from_user.id
-    comm_dispath(id)
-
     async with state.proxy() as data:
         topic = data['text'].lower()
         genre = callback_query.data
