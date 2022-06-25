@@ -2,7 +2,6 @@ import psycopg2
 
 
 def writer(*args, **kwargs):
-    print('start db writer')
 
     conn = psycopg2.connect(
                 dbname='d1hfd95bsculk1', user='zkdwfesfnlqxik', 
@@ -13,10 +12,10 @@ def writer(*args, **kwargs):
 
     conn.autocommit = True
 
-    with open('dataFiles/музика.txt', 'r') as a, \
-            open('dataFiles/фільми.txt', 'r') as b, \
-            open('dataFiles/книги.txt', 'r') as c, \
-            open('dataFiles/youtube.txt', 'r') as d:
+    with open('bot/dataFiles/музика.txt', 'r') as a, \
+            open('bot/dataFiles/фільми.txt', 'r') as b, \
+            open('bot/dataFiles/книги.txt', 'r') as c, \
+            open('bot/dataFiles/youtube.txt', 'r') as d:
 
         data = (a, b, c, d)
         print(data)
@@ -25,7 +24,7 @@ def writer(*args, **kwargs):
 
         while i < 4:
             for line in data[i].readlines():
-                file = data[i].name.split('/')[1]
+                file = data[i].name.split('/')[-1]
                 file = file.split('.')[0]
 
                 insert = line.split(', ')

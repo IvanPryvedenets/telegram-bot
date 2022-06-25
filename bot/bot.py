@@ -97,7 +97,7 @@ async def process_callback_button1(callback_query: types.CallbackQuery, state: F
         for case in info:
             author, image, link, description = case
             link = hlink('Посилання на ресурс', link)
-            await bot.send_photo(callback_query.from_user.id, photo=open('images/'+topic+'/'+image, 'rb'),
+            await bot.send_photo(callback_query.from_user.id, photo=open('bot/images/'+topic+'/'+image, 'rb'),
                                  caption='<b>{}</b>\n\n''{}\n{}\n{}'.format(author, description, message, link), parse_mode=types.ParseMode.HTML)
 
 
