@@ -113,7 +113,6 @@ async def on_shutdown(dp):
 
 
 def main():
-    writer()
     logging.basicConfig(level=logging.INFO)
     start_webhook(
         dispatcher=dp,
