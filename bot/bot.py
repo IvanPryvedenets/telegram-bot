@@ -76,6 +76,7 @@ async def process_callback_button(callback_query: types.CallbackQuery, state: FS
     await bot.answer_callback_query(callback_query.id)
 
     async with state.proxy() as data:
+    	print(data)
         topic = data['text'].lower()
         genre = callback_query.data
         info = genre_constructor(topic, genre)
