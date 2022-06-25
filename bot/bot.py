@@ -1,5 +1,8 @@
 import logging
 
+from dbreader import *
+from dbwriter import writer
+
 from aiogram import Bot, types
 from aiogram.contrib.middlewares.logging import LoggingMiddleware
 from aiogram.dispatcher import Dispatcher, FSMContext
@@ -110,6 +113,7 @@ async def on_shutdown(dp):
 
 
 def main():
+    writer()
     logging.basicConfig(level=logging.INFO)
     start_webhook(
         dispatcher=dp,
