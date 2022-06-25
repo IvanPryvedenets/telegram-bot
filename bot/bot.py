@@ -14,7 +14,7 @@ from bot.settings import (BOT_TOKEN, HEROKU_APP_NAME,
                           WEBAPP_HOST, WEBAPP_PORT)
 
 bot = Bot(token=BOT_TOKEN)
-dp = Dispatcher(bot)
+dp = Dispatcher(bot, storage=MemoryStorage())
 dp.middleware.setup(LoggingMiddleware())
 
 keyboard_buttons = ['Музика', 'Фільми', 'YouTube', 'Книги']
