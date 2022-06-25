@@ -72,7 +72,8 @@ async def message_dispatcher(message: types.Message, state: FSMContext):
 
 
 @dp.callback_query_handler()
-async def process_callback_button1(callback_query: types.CallbackQuery, state: FSMContext):
+async def process_callback_button(callback_query: types.CallbackQuery, state: FSMContext):
+    await bot.answer_callback_query(callback_query.id)
 
     async with state.proxy() as data:
         topic = data['text'].lower()
