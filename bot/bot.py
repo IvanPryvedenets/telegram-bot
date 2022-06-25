@@ -73,7 +73,6 @@ async def message_dispatcher(message: types.Message, state: FSMContext):
 
 @dp.callback_query_handler()
 async def process_callback_button1(callback_query: types.CallbackQuery, state: FSMContext):
-    await bot.answer_callback_query(callback_query.id)
 
     id = callback_query.from_user.id
     comm_dispath(id)

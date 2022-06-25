@@ -18,7 +18,6 @@ def writer(*args, **kwargs):
             open('bot/dataFiles/youtube.txt', 'r') as d:
 
         data = (a, b, c, d)
-        print(data)
 
         i = 0
 
