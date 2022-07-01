@@ -1,6 +1,27 @@
 import psycopg2
 
 
+def users(username):
+
+    conn = psycopg2.connect(
+                dbname='d1hfd95bsculk1', user='zkdwfesfnlqxik', 
+                password='18832829be26b7b27a99b2f6cb1e5d8bc49398fbcd01ad1e2d3aacc1af772ca4',
+                host='ec2-34-200-35-222.compute-1.amazonaws.com')
+                
+    cursor = conn.cursor()
+
+    conn.autocommit = True
+
+    insert = username
+
+    query = 'INSERT INTO counts (username) VALUES (%s)'
+
+    cursor.execute(query, insert)
+
+    cursor.close()
+    conn.close()
+
+
 def writer(*args, **kwargs):
 
     conn = psycopg2.connect(

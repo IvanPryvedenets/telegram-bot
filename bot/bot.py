@@ -1,7 +1,7 @@
 import logging
 
 from bot.dbreader import *
-from bot.dbwriter import writer
+from bot.dbwriter import writer, users
 
 from aiogram import Bot, types
 from aiogram.contrib.middlewares.logging import LoggingMiddleware
@@ -24,6 +24,10 @@ keyboard_buttons = ['Музика', 'Фільми', 'YouTube', 'Книги']
 async def start(message: types.Message):
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
     keyboard.add(*keyboard_buttons)
+    
+    username = [message.from_user.username]
+
+    users(username)
 
     await message.answer('<b>Привіт!</b>\n'
                          '\n'
