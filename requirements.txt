@@ -20,4 +20,5 @@ psycopg2==2.9.3
 toml==0.10.2
 typing-extensions==3.7.4.3
 ujson==4.0.1
+uvloop==0.17.0
 yarl==1.6.3
