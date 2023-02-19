@@ -1,7 +1,7 @@
 import os
 
 
-BOT_TOKEN = os.getenv('BOT_TOKEN')
+BOT_TOKEN = os.getenv('5291674308:AAFePACCW1neDDKs-UV-DLotJ2Cxy1-uVVs')
 if not BOT_TOKEN:
     print('You have forgot to set BOT_TOKEN')
     quit()
