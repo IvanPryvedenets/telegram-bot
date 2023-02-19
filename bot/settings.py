@@ -6,7 +6,7 @@ if not BOT_TOKEN:
     print('You have forgot to set BOT_TOKEN')
     quit()
 
-HEROKU_APP_NAME = os.getenv('HEROKU_APP_NAME')
+HEROKU_APP_NAME = os.getenv('ukrainian bot')
 
 
 # webhook settings
